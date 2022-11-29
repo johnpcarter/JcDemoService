@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">interface</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">jc.demoservice._priv</value>
+  <value name="node_pkg">JcDemoService</value>
+  <value name="is_public">false</value>
+  <value name="shared">CnB1YmxpYyBzdGF0aWMgY2xhc3MgSW52YWxpZE5hbWVFeGNlcHRpb24gZXh0ZW5kcyBTZXJ2aWNl
+RXhjZXB0aW9uIHsKCglwdWJsaWMgSW52YWxpZE5hbWVFeGNlcHRpb24oU3RyaW5nIG5hbWUpIHsK
+CQlzdXBlcigiSW52YWxpZCBuYW1lOiAiICsgIG5hbWUpOwoJfQoJCn0KCnB1YmxpYyBzdGF0aWMg
+U3RyaW5nIGNvbnZlcnQoU3RyaW5nIGFyZykgdGhyb3dzIElPRXhjZXB0aW9uIHsKCiAgICBpbnQg
+d2lkdGggPSA2MDA7CiAgICBpbnQgaGVpZ2h0ID0gMzA7CgogICAgLy9CdWZmZXJlZEltYWdlIGlt
+YWdlID0gSW1hZ2VJTy5yZWFkKG5ldyBGaWxlKCIvVXNlcnMvbWt5b25nL0Rlc2t0b3AvbG9nby5q
+cGciKSk7CiAgICBCdWZmZXJlZEltYWdlIGltYWdlID0gbmV3IEJ1ZmZlcmVkSW1hZ2Uod2lkdGgs
+IGhlaWdodCwgQnVmZmVyZWRJbWFnZS5UWVBFX0lOVF9SR0IpOwogICAgR3JhcGhpY3MgZyA9IGlt
+YWdlLmdldEdyYXBoaWNzKCk7CiAgICBnLnNldEZvbnQobmV3IEZvbnQoIlNhbnNTZXJpZiIsIEZv
+bnQuQk9MRCwgMjQpKTsKCiAgICBHcmFwaGljczJEIGdyYXBoaWNzID0gKEdyYXBoaWNzMkQpIGc7
+CiAgICBncmFwaGljcy5zZXRSZW5kZXJpbmdIaW50KFJlbmRlcmluZ0hpbnRzLktFWV9URVhUX0FO
+VElBTElBU0lORywKICAgICAgICAgICAgUmVuZGVyaW5nSGludHMuVkFMVUVfVEVYVF9BTlRJQUxJ
+QVNfT04pOwogICAgZ3JhcGhpY3MuZHJhd1N0cmluZyhhcmcsIDEwLCAyMCk7CgogICAgLy9zYXZl
+IHRoaXMgaW1hZ2UKICAgIC8vSW1hZ2VJTy53cml0ZShpbWFnZSwgInBuZyIsIG5ldyBGaWxlKCIv
+dXNlcnMvbWt5b25nL2FzY2lpLWFydC5wbmciKSk7CgogICAgU3RyaW5nIG91dCA9ICIiOwogICAg
+CiAgICBmb3IgKGludCB5ID0gMDsgeSA8IGhlaWdodDsgeSsrKSB7CiAgICAgICAgU3RyaW5nQnVp
+bGRlciBzYiA9IG5ldyBTdHJpbmdCdWlsZGVyKCk7CiAgICAgICAgZm9yIChpbnQgeCA9IDA7IHgg
+PCB3aWR0aDsgeCsrKSB7CgogICAgICAgICAgICBzYi5hcHBlbmQoaW1hZ2UuZ2V0UkdCKHgsIHkp
+ID09IC0xNjc3NzIxNiA/ICIgIiA6ICIkIik7CgogICAgICAgIH0KCiAgICAgICAgaWYgKHNiLnRv
+U3RyaW5nKCkudHJpbSgpLmlzRW1wdHkoKSkgewogICAgICAgICAgICBjb250aW51ZTsKICAgICAg
+ICB9CgogICAgICAgIG91dCArPSBzYiArICJcbiI7CiAgICB9CiAgICAKICAgIHJldHVybiBvdXQ7
+Cn0KCQ==</value>
+  <value name="encodeutf8">true</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+  <array name="imports" type="value" depth="1">
+    <value>java.awt.Font</value>
+    <value>java.awt.Graphics</value>
+    <value>java.awt.Graphics2D</value>
+    <value>java.awt.RenderingHints</value>
+    <value>java.awt.image.BufferedImage</value>
+    <value>java.io.IOException</value>
+    <value>java.net.InetAddress</value>
+    <value>java.net.UnknownHostException</value>
+  </array>
+</Values>
