@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wm-demo-service
+  labels:
+    app: wm-demo-service
+    deploymentId: demo-service
+    serviceId: demo-service
+    serviceType: deployments
+  namespace: webmethods
+  annotations:
+    monitoring: "false"
+spec:
+  replicas: 2
+  selector:
+    matchLabels: 
+      app: wm-demo-service
+  template:
+    metadata:
+      labels:
+        app: wm-demo-service
+    spec:
+      hostname: 
+      restartPolicy: Always
+      containers: 
+      - name: demo-service
+        image: default/demo-service:1.0
+        ports: 
+        - containerPort: 5555
+          name: admin-port
+        - containerPort: 9999
+          name: diag-port
+        livenessProbe:
+          httpGet:
+            path: /invoke/wm.server/ping
+            port: 5555
+          initialDelaySeconds: 120
+          timeoutSeconds: 10
+        volumeMounts: 
+        - mountPath: /opt/softwareag/IntegrationServer/db
+          name: wmdb
+        - mountPath: /opt/softwareag/IntegrationServer/cache
+          name: cache
+        env: 
+        - name: "SAG_IS_CONFIG_PROPERTIES"
+          value: "application-k8s.properties"
+        - name: "JAVA_MIN_MEM"
+          value: "256m"
+        - name: "JAVA_MAX_MEM"
+          value: "1024m"
+        - name: "SECRET_PATH"
+          value: "/home/secrets"
+        - name: "SAG_IS_HEALTH_ENDPOINT_ACL"
+          value: "Anonymous"
+        - name: "SAG_IS_METRICS_ENDPOINT_ACL"
+          value: "Anonymous"
+        - name: "SAG_IS_AUDIT_STDOUT_LOGGERS"
+          value: "ALL"
+        - name: "admin_password"
+          value: "manage"
+        - name: "admin_port"
+          value: "5555"
+      volumes: 
+      - name: wmdb
+      - name: cache

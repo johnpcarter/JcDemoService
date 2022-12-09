@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: wm-demo-service
+    deploymentId: demo-service
+  name: wm-lbalancer-demo-service
+  namespace: webmethods
+spec:
+  selector:
+    app: wm-demo-service
+  type: LoadBalancer
+  ports: 
+  - name: admin-port
+    port: 4444
+    protocol: TCP
+    targetPort: 5555

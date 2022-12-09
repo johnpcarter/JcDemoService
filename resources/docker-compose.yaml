@@ -1,0 +1,37 @@
+version: '2'
+
+services: 
+  demo-service:
+    image: default/demo-service:1.0
+    hostname: demo-service
+    ports: 
+        - "9090:9090"
+        - "9998:9999"
+    volumes: 
+        - wmdb:/opt/softwareag/IntegrationServer/db
+        - cache:/opt/softwareag/IntegrationServer/cache
+    environment: 
+        - JAVA_MIN_MEM=256m
+        - JAVA_MAX_MEM=1024m
+        - SECRET_PATH=/home/secrets
+        - SAG_IS_HEALTH_ENDPOINT_ACL=Anonymous
+        - SAG_IS_METRICS_ENDPOINT_ACL=Anonymous
+        - SAG_IS_AUDIT_STDOUT_LOGGERS=ALL
+        - admin_password=manage
+        - admin_port=9090
+    depends_on: 
+        - "mysqldb"  
+  mysqldb:
+    image: iregistry.eur.ad.sag/pmm/mysqlwm:8.0
+    hostname: mysqldb
+    ports: 
+        - "3306:3306"
+    volumes: 
+        - mysql_db:/var/lib/mysql
+    environment: 
+        - MYSQL_ROOT_PASSWORD=manage
+        - MYSQL_DATABASE=default  
+volumes:     
+   wmdb:     
+   cache:     
+   mysql_db:

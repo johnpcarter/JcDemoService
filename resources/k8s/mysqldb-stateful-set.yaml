@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: wm-storage
+  labels:
+    app: wm-storage
+    deploymentId: demo-service
+    serviceId: mysqldb
+    serviceType: statefulsets
+  namespace: webmethods
+  annotations:
+    monitoring: "false"
+spec:
+  replicas: 1
+  serviceName: wm-storage-server
+  selector:
+    matchLabels: 
+      app: wm-storage
+  template:
+    metadata:
+      labels:
+        app: wm-storage
+    spec:
+      hostname: 
+      restartPolicy: Always
+      containers: 
+      - name: mysqldb
+        image: iregistry.eur.ad.sag/pmm/mysqlwm:8.0
+        ports: 
+        - containerPort: 3306
+          name: jdbc-conn
+        volumeMounts: 
+        - mountPath: /var/lib/mysql
+          name: mysql-db
+        env: 
+        - name: "MYSQL_ROOT_PASSWORD"
+          value: "manage"
+        - name: "MYSQL_DATABASE"
+          value: "default"
+  volumeClaimTemplates: 
+    - metadata:
+        name: mysql-db
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
+        storageClassName:       
+
